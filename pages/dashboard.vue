@@ -192,10 +192,10 @@
             </div>
             <div class="text-center">
               <p class="text-xs uppercase tracking-wider text-blue-200 font-medium">Valuação</p>
-              <p class="text-xl md:text-2xl font-bold text-white">R$ 25M</p>
+              <p class="text-xl md:text-2xl font-bold text-white">R$ 5M</p>
             </div>
             <div class="text-center">
-              <p class="text-xs uppercase tracking-wider text-blue-200 font-medium">Investimento Mínimo</p>
+              <p class="text-xs uppercase tracking-wider text-blue-200 font-medium">Investimento Min.</p>
               <p class="text-xl md:text-2xl font-bold text-white">R$ 50K</p>
             </div>
             <div class="text-center">
@@ -448,6 +448,26 @@
         </div>
       </div>
     </div>
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center mb-6 md:mb-0">
+            <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-blue-600 mr-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+            </div>
+            <h2 class="text-xl font-bold">NOSTROLET</h2>
+          </div>
+          
+          <div class="text-center md:text-right">
+            <p class="text-gray-400 text-sm">© 2025 NostroLet. Todos os direitos reservados.</p>
+            <p class="text-gray-400 text-sm mt-1">Tokenizando o futuro do mercado imobiliário.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
