@@ -58,7 +58,7 @@
           </button>
           
           <div class="mt-6 text-center text-blue-200 text-sm">
-            Entre em contato para solicitar acesso: <a href="mailto:contato@nostrolet.com" class="text-white hover:underline">034 984176363</a>
+            Entre em contato para solicitar acesso: <a href="mailto:contato@nostrolet.com" class="text-white hover:underline">034984176363</a>
           </div>
         </div>
       </div>

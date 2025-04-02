@@ -80,14 +80,14 @@
                 <h3 class="text-xl font-bold text-gray-800 mb-3">Rodada Fundadora</h3>
                 <div class="flex items-center justify-between mb-4">
                   <span class="text-sm text-gray-500">Ticket a partir de</span>
-                  <span class="text-lg font-bold text-blue-700">R$ 100K</span>
+                  <span class="text-lg font-bold text-blue-700">R$ 50K</span>
                 </div>
                 <ul class="space-y-2 text-gray-600 mb-6">
                   <li class="flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                     </svg>
-                    Valuation reduzido de R$ 10 milhões
+                    Valuation reduzido de R$ 25 milhões
                   </li>
                   <li class="flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -211,7 +211,7 @@
       <!-- Back to Dashboard Link -->
       <div class="mt-16 text-center pb-10">
         <NuxtLink 
-          to="/" 
+          to="/dashboard" 
           class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-all duration-300 group"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 transform transition-transform group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">

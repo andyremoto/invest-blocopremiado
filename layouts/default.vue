@@ -71,7 +71,7 @@
   const mobileMenuOpen = ref(false);
   
   const navItems = [
-    { name: 'Visão Geral', path: '/' },
+    { name: 'Home', path: '/' },
     { name: 'Rodada Fundadora', path: '/founder' },
     { name: 'Pré-Seed', path: '/preseed' },
     { name: 'Mercado', path: '/market' },

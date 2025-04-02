@@ -5,14 +5,14 @@
     <nav class="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-4 sticky top-0 z-50 shadow-xl transition-all duration-300" :class="{'py-2': scrolled}">
       <div class="container mx-auto px-4 flex justify-between items-center">
         <div class="flex items-center space-x-4">
-          <NuxtLink to="/" class="flex items-center text-white hover:text-blue-200 transition-all duration-300 transform hover:scale-105">
+          <button @click="logout" type="button" class="flex items-center text-white hover:text-blue-200 transition-all duration-300 transform hover:scale-105 cursor-pointer bg-transparent border-0">
             <div class="bg-white bg-opacity-20 rounded-full p-2 backdrop-blur-sm">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
             </div>
             <span class="ml-2 font-medium">Voltar</span>
-          </NuxtLink>
+          </button>
         </div>
         
         <div class="hidden md:flex items-center space-x-8">
@@ -28,7 +28,7 @@
             <span>Solução</span>
             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
           </a>
-          <a href="#investir" class="relative hover:text-blue-200 transition-all group py-1">
+          <a href="#Rodadas" class="relative hover:text-blue-200 transition-all group py-1">
             <span>Investir</span>
             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
           </a>
@@ -37,7 +37,7 @@
         <!-- Investor Action Button -->
         <div class="hidden md:block">
           <a href="#investir" class="bg-white text-blue-800 font-medium py-2 px-4 rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
-            Investir Agora
+            Entrar em contato
           </a>
         </div>
         
@@ -424,27 +424,44 @@
       </div>
   
       <!-- Enhanced CTA Links -->
-      <div id="investir" class="text-center mt-10 space-y-6">
-        <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
+      <div id="investir" class="text-center mt-10 space-y-6 bg-gradient-to-br from-blue-800 via-indigo-800 to-blue-900 p-8 rounded-2xl shadow-xl relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute inset-0 overflow-hidden">
+          <div class="absolute top-0 right-0 w-40 h-40 bg-white opacity-5 rounded-full"></div>
+          <div class="absolute bottom-0 left-0 w-60 h-60 bg-blue-400 opacity-10 rounded-full"></div>
+          <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+        </div>
+        
+        <div class="relative z-10">
+          <div class="flex items-center justify-center mb-6">
+            <div class="bg-white bg-opacity-20 p-3 rounded-xl shadow-md mr-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h2 class="text-3xl font-bold text-white">Conheça as Rodadas</h2>
+          </div>
+          <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6 mt-6">
           <NuxtLink 
             to="/founder" 
-            class="inline-flex items-center bg-gradient-to-r from-blue-700 to-indigo-700 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            class="inline-flex items-center bg-white text-blue-800 font-semibold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-lg"
           >
-            Conheça a Rodada Fundadora
+            Rodada Fundadora
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
           </NuxtLink>
-          
+        
           <NuxtLink 
             to="/preseed" 
-            class="inline-flex items-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            class="inline-flex items-center bg-gradient-to-r from-blue-200 to-indigo-200 text-blue-900 font-semibold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-lg"
           >
-            Conheça a Rodada Pré-Seed
+            Rodada Pré-Seed
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
           </NuxtLink>
+          </div>
         </div>
       </div>
     </div>
@@ -473,10 +490,22 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
 const mobileMenuOpen = ref(false);
 const scrolled = ref(false);
 const hoverRound = ref(null);
+
+function logout() {
+  console.log('Logout function called');
+  localStorage.removeItem('nostrolet-auth');
+  console.log('Auth removed from localStorage');
+  
+  // Force navigation to login page
+  window.location.href = '/';
+  console.log('Navigating to home page');
+}
 
 const handleScroll = () => {
   scrolled.value = window.scrollY > 50;

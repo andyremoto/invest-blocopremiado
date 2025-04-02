@@ -173,7 +173,7 @@
                     <div class="absolute w-6 h-6 bg-blue-100 rounded-full -left-3 flex items-center justify-center">
                       <span class="text-blue-600 font-bold text-sm">2</span>
                     </div>
-                    <h4 class="font-semibold text-gray-800">Assinar Term Sheet simplificado</h4>
+                    <h4 class="font-semibold text-gray-800">Assinar Contratos</h4>
                     <p class="text-sm text-gray-600">Formalização das condições de investimento.</p>
                   </li>
                   <li>
@@ -231,7 +231,7 @@
       <!-- Back to Dashboard Link -->
       <div class="mt-10 text-center pb-10">
         <NuxtLink 
-          to="/" 
+          to="/dashboard" 
           class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-all duration-300 group"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 transform transition-transform group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
