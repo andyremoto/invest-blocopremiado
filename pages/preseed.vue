@@ -294,15 +294,15 @@
       
       <!-- Back to Dashboard Link -->
       <div class="mt-10 text-center pb-10">
-        <a 
-          href="/dashboard" 
+        <NuxtLink 
+          to="/" 
           class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-all duration-300 group"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 transform transition-transform group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
           Voltar para Visão Geral
-        </a>
+        </NuxtLink>
       </div>
 
 </template>

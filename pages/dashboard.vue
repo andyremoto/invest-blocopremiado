@@ -1,18 +1,18 @@
-<!-- pages/dashboard.vue -->
+<!-- dashboard.vue component -->
 <template>
   <div class="overflow-hidden">
     <!-- Premium Navigation Bar -->
     <nav class="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-4 sticky top-0 z-50 shadow-xl transition-all duration-300" :class="{'py-2': scrolled}">
       <div class="container mx-auto px-4 flex justify-between items-center">
         <div class="flex items-center space-x-4">
-          <a href="/" class="flex items-center text-white hover:text-blue-200 transition-all duration-300 transform hover:scale-105">
+          <NuxtLink to="/" class="flex items-center text-white hover:text-blue-200 transition-all duration-300 transform hover:scale-105">
             <div class="bg-white bg-opacity-20 rounded-full p-2 backdrop-blur-sm">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
             </div>
             <span class="ml-2 font-medium">Voltar</span>
-          </a>
+          </NuxtLink>
         </div>
         
         <div class="hidden md:flex items-center space-x-8">
@@ -423,17 +423,29 @@
         </div>
       </div>
   
-      <!-- Enhanced CTA Link -->
-      <div id="investir" class="text-center mt-10">
-        <a 
-          href="/preseed" 
-          class="inline-flex items-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-        >
-          Conheça a Rodada Pré-Seed
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </a>
+      <!-- Enhanced CTA Links -->
+      <div id="investir" class="text-center mt-10 space-y-6">
+        <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
+          <NuxtLink 
+            to="/founder" 
+            class="inline-flex items-center bg-gradient-to-r from-blue-700 to-indigo-700 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          >
+            Conheça a Rodada Fundadora
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </NuxtLink>
+          
+          <NuxtLink 
+            to="/preseed" 
+            class="inline-flex items-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold py-3 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+          >
+            Conheça a Rodada Pré-Seed
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </NuxtLink>
+        </div>
       </div>
     </div>
   </div>

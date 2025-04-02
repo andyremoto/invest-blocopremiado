@@ -4,7 +4,7 @@
       <header class="bg-white shadow-md sticky top-0 z-10">
         <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <div class="flex items-center">
-            <NuxtLink to="/dashboard" class="flex items-center">
+            <NuxtLink to="/" class="flex items-center">
               <img src="/logo.png" alt="NostroLet" class="h-10 mr-3" />
               <h1 class="text-2xl font-bold text-gray-900">NOSTROLET</h1>
             </NuxtLink>
@@ -71,7 +71,7 @@
   const mobileMenuOpen = ref(false);
   
   const navItems = [
-    { name: 'Visão Geral', path: '/dashboard' },
+    { name: 'Visão Geral', path: '/' },
     { name: 'Rodada Fundadora', path: '/founder' },
     { name: 'Pré-Seed', path: '/preseed' },
     { name: 'Mercado', path: '/market' },

@@ -64,23 +64,25 @@
       </div>
   
       <div v-else>
-        <NuxtPage />
+        <DashboardComponent />
       </div>
     </div>
   </template>
   
   <script setup>
-  import { ref, onMounted } from 'vue';
-  
+  import { ref, onMounted, defineAsyncComponent } from 'vue';
+
   const password = ref('');
   const authenticated = ref(false);
   const error = ref('');
-  
+
+  // Import the dashboard component
+  const DashboardComponent = defineAsyncComponent(() => import('./dashboard.vue'));
+
   function authenticate() {
     if (password.value === '0747') {
       authenticated.value = true;
       localStorage.setItem('nostrolet-auth', 'true');
-      navigateTo('/dashboard');
     } else {
       error.value = 'Senha incorreta. Tente novamente.';
       // Clear password after error
@@ -92,11 +94,10 @@
       }, 3000);
     }
   }
-  
+
   onMounted(() => {
     if (localStorage.getItem('nostrolet-auth') === 'true') {
       authenticated.value = true;
-      navigateTo('/dashboard');
     }
   });
   </script>
