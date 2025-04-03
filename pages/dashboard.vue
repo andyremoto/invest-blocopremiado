@@ -586,11 +586,25 @@ import '@/assets/css/dashboard.css';
 
 import { ref, onMounted, onUnmounted } from 'vue';
 import { useRouter } from 'vue-router';
+import { useHead } from '#app';
 
 const router = useRouter();
 const mobileMenuOpen = ref(false);
 const scrolled = ref(false);
 const hoverRound = ref(null);
+
+// Set dashboard-specific meta tags for mobile browsers
+useHead({
+  meta: [
+    // Dark pink theme color specifically for the dashboard
+    { name: 'theme-color', content: '#831843' },
+    // iOS full-screen mode with colored status bar
+    { name: 'apple-mobile-web-app-capable', content: 'yes' },
+    { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
+    // Enable viewport to extend into notch area on iPhone X and newer
+    { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' }
+  ]
+});
 
 function logout() {
   console.log('Logout function called');
