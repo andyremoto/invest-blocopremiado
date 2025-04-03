@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     head: {
       title: 'Bloco Premiado - Sorteios na Blockchain',
       meta: [
-        { name: 'description', content: 'NostroLet é um DApp premium que revoluciona o mercado imobiliário através da tokenização de imóveis.' },
+        { name: 'description', content: 'Bloco Premiado é um DApp premium que revoluciona a maneira de fazer rifas e loterias, de forma segura, transparente e auditável.' },
         // Theme color for browser tabs/address bars (Chrome, Firefox, etc)
         { name: 'theme-color', content: '#831843' },
         

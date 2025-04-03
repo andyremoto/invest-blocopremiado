@@ -106,7 +106,7 @@
   .bg-grid-pattern {
     background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
       linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 20px 20px;
+    background-size: 100% 100%;
   }
   
   /* Animations */
