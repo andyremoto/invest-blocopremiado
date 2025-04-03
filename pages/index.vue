@@ -82,7 +82,9 @@
   function authenticate() {
     if (password.value === '0747') {
       authenticated.value = true;
+      // Store auth in both keys for compatibility
       localStorage.setItem('blocopremiado-auth', 'true');
+      localStorage.setItem('nostrolet-auth', 'true');
     } else {
       error.value = 'Senha incorreta. Tente novamente.';
       // Clear password after error
@@ -96,6 +98,22 @@
   }
 
   onMounted(() => {
+    // Check if user has logged out - the dashboard.vue adds a logout param to the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('logout')) {
+      // Clear all auth data to ensure fresh login
+      localStorage.removeItem('blocopremiado-auth');
+      localStorage.removeItem('nostrolet-auth');
+      sessionStorage.removeItem('blocopremiado-auth');
+      sessionStorage.removeItem('nostrolet-auth');
+      authenticated.value = false;
+      console.log('User has logged out, forcing fresh login');
+      // Clear the URL parameter without page refresh
+      window.history.replaceState({}, document.title, window.location.pathname);
+      return;
+    }
+    
+    // Check for authentication in local storage
     if (localStorage.getItem('blocopremiado-auth') === 'true') {
       authenticated.value = true;
     }

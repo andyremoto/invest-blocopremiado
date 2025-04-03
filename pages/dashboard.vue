@@ -1,6 +1,6 @@
 <!-- dashboard.vue component -->
 <template>
-  <div class="dashboard-content min-h-screen flex flex-col">
+  <div>
     <!-- Premium Navigation Bar -->
     <nav class="bg-gradient-to-r from-orange-600 to-pink-600 text-white py-4 sticky top-0 z-50 shadow-xl transition-all duration-300" :class="{'py-2': scrolled}">
       <div class="container mx-auto px-4 flex justify-between items-center">
@@ -80,9 +80,9 @@
     <!-- Main Content with Animation -->
     <div class="w-full max-w-none px-0 sm:px-4 py-6 space-y-10">
       <!-- Hero Section with Animation and Parallax Effect -->
-      <div class="relative bg-gradient-to-br from-orange-500 via-red-500 to-pink-600 rounded-2xl shadow-2xl overflow-hidden transform-gpu">
+      <div class="relative bg-gradient-to-br from-orange-500 via-red-500 to-pink-600 rounded-2xl shadow-2xl overflow-hidden transform-gpu animate-fade-in">
         <!-- Background decorative elements -->
-        <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
           <div class="absolute right-0 bottom-0 w-80 h-80 bg-yellow-500 rounded-full filter blur-3xl opacity-10 transform translate-x-1/4 translate-y-1/4"></div>
           <div class="absolute left-1/4 top-0 w-60 h-60 bg-pink-600 opacity-5 rounded-full"></div>
           <div class="absolute left-1/2 top-1/2 w-60 h-60 bg-orange-500 opacity-5 rounded-full"></div>
@@ -91,13 +91,13 @@
         </div>
         
         <div class="md:flex relative z-10">
-          <div class="w-full md:w-1/2 p-6 sm:p-8 md:p-12">
-            <div v-motion-fade-visible :delay="200">
-              <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 sm:mb-6 leading-tight">
+          <div class="md:w-1/2 p-8 md:p-12">
+            <div class="animate-fade-in">
+              <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white mb-4 sm:mb-6 leading-tight">
                 Rodada Pré-Seed<br />
                 <span class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-white">Bloco Premiado</span>
               </h1>
-              <p class="text-lg text-orange-100 mb-10 max-w-3xl">
+              <p class="text-base sm:text-lg md:text-xl text-orange-100 mb-4 sm:mb-6 leading-relaxed">
                 Plataforma de staking com sorteios baseada em blockchain, utilizando arquitetura Stateless Virtual Ticket (SVTA) para uma experiência totalmente transparente, escalável e sem custos de gas.
                 <span class="block mt-3 font-semibold">
                   Transparência + Escalabilidade + Interatividade
@@ -105,21 +105,21 @@
               </p>
             </div>
             
-            <div v-motion-slide-visible-once :delay="600" class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 items-center">
-              <a 
-                href="/preseed" 
-                class="block md:inline-flex px-6 py-3 bg-white text-pink-600 font-bold rounded-xl shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 mb-3 md:mb-0 text-center md:text-left"
+            <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 items-center animate-slide-in">
+              <NuxtLink
+                to="/preseed-new" 
+                class="cursor-pointer block md:inline-flex px-6 py-3 bg-white text-pink-600 font-bold rounded-xl shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 mb-3 md:mb-0 text-center md:text-left"
                 @mouseenter="hoverRound = 'preseed'"
                 @mouseleave="hoverRound = null"
               >
                 Detalhes da Rodada
-              </a>
-              <a 
-                href="#arquitetura" 
-                class="block md:inline-flex px-6 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-bold rounded-xl shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 md:ml-4 text-center md:text-left"
+              </NuxtLink>
+              <NuxtLink 
+                to="/architecture" 
+                class="cursor-pointer block md:inline-flex px-6 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-bold rounded-xl shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 md:ml-4 text-center md:text-left"
               >
                 Arquitetura SVTA
-              </a>
+              </NuxtLink>
               
               <a href="#diferenciais" class="flex items-center justify-center text-white font-medium hover:text-orange-200 transition-all duration-300 py-3 px-6 mt-2 sm:mt-0">
                 <span>Diferenciais</span>
@@ -130,7 +130,7 @@
             </div>
             
             <!-- Hover Info Box -->
-            <div v-if="hoverRound" v-motion-fade :delay="50" class="mt-6 bg-white bg-opacity-10 backdrop-blur-md p-4 rounded-xl border border-white border-opacity-10 shadow-lg">
+            <div v-if="hoverRound" class="mt-6 bg-white bg-opacity-10 backdrop-blur-md p-4 rounded-xl border border-white border-opacity-10 shadow-lg transition-opacity duration-300 ease-in-out">
               <div v-if="hoverRound === 'preseed'" class="text-white">
                 <h4 class="font-semibold text-orange-100">Rodada Pré-Seed</h4>
                 <div class="flex items-center justify-between mt-2">
@@ -151,7 +151,7 @@
           
           <div class="w-full md:w-1/2 flex items-center justify-center p-6 sm:p-8 md:p-12 relative overflow-hidden">
             <!-- Animated background for logo -->
-            <div class="absolute inset-0 flex items-center justify-center">
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
               <div class="w-64 h-64 bg-white bg-opacity-10 rounded-full filter blur-md animate-pulse-slow"></div>
             </div>
             
@@ -164,7 +164,7 @@
         
         <!-- Investment Rounds Stats -->
         <div class="bg-orange-900 bg-opacity-50 backdrop-blur-md border-t border-white border-opacity-10 py-4 px-6">
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-10">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-10 animate-fade-in">
             <div class="text-center">
               <p class="text-xs uppercase tracking-wider text-orange-200 font-medium">Tamanho da Rodada</p>
               <p class="text-2xl font-bold text-white">R$ 225K</p>
@@ -186,9 +186,9 @@
       </div>
   
       <!-- Resumo Section with Premium Design -->
-      <div id="resumo" class="mt-8 sm:mt-12 md:mt-16 p-4 sm:p-6 md:p-8 bg-gradient-to-br from-pink-800 to-red-800 rounded-2xl shadow-lg p-6 sm:p-8 md:p-10 border border-pink-700">
+      <div id="resumo" class="mt-8 sm:mt-12 md:mt-16 p-4 sm:p-6 md:p-8 bg-gradient-to-br from-pink-800 to-red-800 rounded-2xl shadow-lg p-6 sm:p-8 md:p-10 border border-pink-700 animate-fade-in">
         <!-- Background decorative elements -->
-        <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
           <div class="absolute -right-20 -top-20 w-60 h-60 bg-yellow-400 opacity-10 rounded-full"></div>
           <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-pink-500 opacity-10 rounded-full"></div>
           <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
@@ -204,7 +204,7 @@
             <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-8 border-l-4 border-orange-500 pl-4">Resumo</h2>
           </div>
           
-          <p class="text-lg text-orange-100 mb-10 max-w-3xl">
+          <p class="text-base sm:text-lg text-orange-100 mb-10 max-w-3xl">
             O Bloco Premiado é uma plataforma de staking com sorteios baseada em blockchain, utilizando a arquitetura Stateless Virtual Ticket (SVTA) para oferecer uma experiência totalmente transparente, escalável e sem custos de gas.
           </p>
           
@@ -232,9 +232,9 @@
         </div>
       </div>
       <!-- Arquitetura Section with Premium Design -->
-      <div id="arquitetura" class="mt-8 sm:mt-12 md:mt-16 p-4 sm:p-6 md:p-8 bg-gradient-to-br from-pink-800 to-red-800 rounded-2xl shadow-lg p-6 sm:p-8 md:p-10 border border-pink-700">
+      <div id="arquitetura" class="mt-8 sm:mt-12 md:mt-16 p-4 sm:p-6 md:p-8 bg-gradient-to-br from-pink-800 to-red-800 rounded-2xl shadow-lg p-6 sm:p-8 md:p-10 border border-pink-700 animate-fade-in">
         <!-- Background decorative elements -->
-        <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
           <div class="absolute -right-20 bottom-0 w-80 h-80 bg-yellow-500 opacity-10 rounded-full blur-3xl"></div>
           <div class="absolute left-0 top-0 w-60 h-60 bg-pink-400 opacity-10 rounded-full blur-2xl"></div>
           <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
@@ -250,7 +250,7 @@
             <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-8 border-l-4 border-orange-500 pl-4">Arquitetura SVTA</h2>
           </div>
           
-          <p class="text-lg text-orange-100 mb-10 max-w-3xl">
+          <p class="text-base sm:text-lg text-orange-100 mb-10 max-w-3xl">
             A Arquitetura de Tickets Virtuais Stateless (SVTA) elimina a necessidade de armazenamento on-chain, alcançando máxima escalabilidade, transparência e eficiência.
           </p>
           
@@ -287,7 +287,7 @@
                 </div>
                 <div class="bg-gradient-to-r from-yellow-500 to-orange-500 py-3 px-6 rounded-lg shadow-lg">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
               </div>
@@ -338,9 +338,9 @@
       </div>
   
       <!-- Nossa Solução Section -->
-      <div id="diferenciais" class="mt-8 sm:mt-12 md:mt-16 p-4 sm:p-6 md:p-8 bg-gradient-to-br from-pink-800 to-red-800 rounded-2xl shadow-lg p-6 sm:p-8 md:p-10 border border-pink-700">
+      <div id="diferenciais" class="mt-8 sm:mt-12 md:mt-16 p-4 sm:p-6 md:p-8 bg-gradient-to-br from-pink-800 to-red-800 rounded-2xl shadow-lg p-6 sm:p-8 md:p-10 border border-pink-700 animate-fade-in">
         <!-- Background decorative elements -->
-        <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
           <div class="absolute -left-20 bottom-0 w-80 h-80 bg-yellow-600 opacity-10 rounded-full blur-3xl"></div>
           <div class="absolute right-0 top-0 w-60 h-60 bg-pink-400 opacity-10 rounded-full blur-2xl"></div>
           <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
@@ -453,7 +453,7 @@
       <!-- Enhanced CTA Links -->
       <div id="investir" class="text-center mt-10 space-y-6 bg-gradient-to-br from-orange-600 via-red-600 to-pink-700 p-8 rounded-2xl shadow-xl relative overflow-hidden">
         <!-- Decorative elements -->
-        <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
           <div class="absolute top-0 right-0 w-40 h-40 bg-white opacity-5 rounded-full"></div>
           <div class="absolute bottom-0 left-0 w-60 h-60 bg-yellow-400 opacity-10 rounded-full"></div>
           <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
@@ -508,7 +508,7 @@
           </div>
           
           <div class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-xl border border-white border-opacity-20 max-w-4xl mx-auto mb-10">
-            <h3 class="text-2xl font-bold text-white mb-6">Alocação dos Recursos</h3>
+            <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6 text-center">Alocação dos Recursos</h3>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div class="flex items-center space-x-4">
@@ -553,10 +553,10 @@
             </div>
           </div>
           
-          <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 items-center justify-center">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 items-center justify-center animate-slide-in">
             <NuxtLink 
               to="/preseed-new" 
-              class="inline-flex items-center bg-white text-pink-600 font-semibold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-lg"
+              class="inline-flex items-center bg-white text-pink-600 font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-base sm:text-lg"
             >
               Rodada Pré-Seed
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -566,7 +566,7 @@
           
             <NuxtLink 
               to="/architecture" 
-              class="inline-flex items-center bg-gradient-to-r from-orange-400 to-pink-400 text-white font-semibold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-lg"
+              class="inline-flex items-center bg-gradient-to-r from-orange-400 to-pink-400 text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-base sm:text-lg"
             >
               Arquitetura SVTA
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -582,7 +582,6 @@
 
 <script setup>
 // Import dashboard-specific styles
-import '@/assets/css/dashboard.css';
 
 import { ref, onMounted, onUnmounted } from 'vue';
 import { useRouter } from 'vue-router';
@@ -594,6 +593,7 @@ const scrolled = ref(false);
 const hoverRound = ref(null);
 
 // Set dashboard-specific meta tags for mobile browsers
+// Enhanced meta tags for mobile responsiveness
 useHead({
   meta: [
     // Dark pink theme color specifically for the dashboard
@@ -601,19 +601,29 @@ useHead({
     // iOS full-screen mode with colored status bar
     { name: 'apple-mobile-web-app-capable', content: 'yes' },
     { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
-    // Enable viewport to extend into notch area on iPhone X and newer
-    { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' }
+    // Enable viewport to extend into notch area on modern phones (iOS and Android)
+    { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover' },
+    // Android specific meta tag for chrome theme color
+    { name: 'mobile-web-app-capable', content: 'yes' }
   ]
 });
 
 function logout() {
   console.log('Logout function called');
-  localStorage.removeItem('nostrolet-auth');
-  console.log('Auth removed from localStorage');
   
-  // Force navigation to login page
-  window.location.href = '/';
-  console.log('Navigating to home page');
+  // Clear all auth-related storage
+  localStorage.removeItem('blocopremiado-auth');
+  sessionStorage.removeItem('blocopremiado-auth');
+  
+  // Add a logout parameter to prevent auto-login
+  const logoutTimestamp = new Date().getTime();
+  localStorage.setItem('logout-timestamp', logoutTimestamp.toString());
+  
+  console.log('Auth data cleared and logout timestamp set');
+  
+  // Force navigation to login page with cache-busting parameter
+  window.location.href = `/?logout=${logoutTimestamp}`;
+  console.log('Navigating to home page with logout parameter');
 }
 
 const handleScroll = () => {
@@ -630,11 +640,22 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-/* Dashboard content styles */
-.dashboard-content {
-  position: relative;
-  z-index: 1;
+/* Responsive text adjustments for Android */
+@media screen and (max-width: 414px) {
+  .text-base { font-size: 0.9rem; }
+  .text-lg { font-size: 1.05rem; }
+  .text-xl { font-size: 1.2rem; }
+  .text-2xl { font-size: 1.3rem; }
+  h1, h2, h3, h4 { word-break: break-word; }
+  p { line-height: 1.6; }
 }
+
+/* Simple background style */
+body {
+  background-image: linear-gradient(to bottom right, #7f1d50, #6b121d);
+  min-height: 100vh;
+}
+
 .bg-grid-pattern {
   background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
@@ -675,5 +696,34 @@ onUnmounted(() => {
   transform: translateY(-20px);
 }
 
+/* Animation replacements for motion directives */
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
 
+.animate-slide-in {
+  animation: slideIn 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 </style>

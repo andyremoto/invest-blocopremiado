@@ -30,14 +30,15 @@
           </button>
         </div>
         <!-- Mobile menu -->
-        <div v-if="mobileMenuOpen" class="md:hidden bg-gradient-to-br from-orange-700 to-pink-700 border-t border-orange-500 py-2 shadow-lg">
+        <div v-show="mobileMenuOpen" class="md:hidden bg-gradient-to-br from-orange-700 to-pink-700 border-t border-orange-500 py-2 shadow-lg transition-all duration-300">
           <ul class="px-4 space-y-2">
             <li v-for="item in navItems" :key="item.path">
               <NuxtLink 
                 :to="item.path" 
                 class="block px-3 py-2 rounded-md"
                 :class="$route.path === item.path ? 'bg-orange-600 bg-opacity-40 text-yellow-300 font-semibold' : 'text-white hover:bg-orange-600 hover:bg-opacity-30'"
-                @click="mobileMenuOpen = false"
+                @click.native.stop="closeMobileMenu"
+                @touchend.prevent="navigateAndClose(item.path)"
               >
                 {{ item.name }}
               </NuxtLink>
@@ -68,13 +69,35 @@
   </template>
   
   <script setup>
-import { ref, computed } from 'vue';
-import { useRoute } from 'vue-router';
+import { ref, computed, watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import { navigateTo } from '#app';
 
 const route = useRoute();
 const isDashboardPage = computed(() => route.path === '/dashboard');
   
   const mobileMenuOpen = ref(false);
+  
+  // Function to close mobile menu and work around Android issues
+  function closeMobileMenu() {
+    mobileMenuOpen.value = false;
+  }
+  
+  // Function to navigate and close menu for touch events
+  function navigateAndClose(path) {
+    mobileMenuOpen.value = false;
+    if (route.path !== path) {
+      // Add a small delay to make navigation more reliable on Android
+      setTimeout(() => {
+        navigateTo(path);
+      }, 50);
+    }
+  }
+  
+  // Watch for route changes to close menu when navigating
+  watch(route, () => {
+    mobileMenuOpen.value = false;
+  });
   
   const navItems = [
     { name: 'Home', path: '/' },
