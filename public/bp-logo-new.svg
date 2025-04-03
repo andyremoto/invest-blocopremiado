@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient background -->
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF8A00"/>
+      <stop offset="0.5" stop-color="#FF5252"/>
+      <stop offset="1" stop-color="#E91E63"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background rectangle with gradient -->
+  <rect width="512" height="512" rx="80" fill="url(#paint0_linear)"/>
+  
+  <!-- Asymmetrical blocks in white -->
+  <!-- Top left block - wider rectangle -->
+  <rect x="130" y="115" width="120" height="96" rx="8" fill="white"/>
+  
+  <!-- Top right block - smaller square -->
+  <rect x="290" y="150" width="80" height="80" rx="8" fill="white"/>
+  
+  <!-- Bottom block - larger square -->
+  <rect x="130" y="260" width="174" height="140" rx="8" fill="white"/>
+</svg>

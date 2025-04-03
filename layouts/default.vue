@@ -1,12 +1,12 @@
 <!-- layouts/default.vue -->
 <template>
     <div class="min-h-screen bg-gray-50">
-      <header class="bg-white shadow-md sticky top-0 z-10">
+      <header class="bg-gradient-to-r from-orange-600 to-pink-600 shadow-md sticky top-0 z-10">
         <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <div class="flex items-center">
             <NuxtLink to="/" class="flex items-center">
-              <img src="/logo.png" alt="NostroLet" class="h-10 mr-3" />
-              <h1 class="text-2xl font-bold text-gray-900">NOSTROLET</h1>
+              <img src="/bp-logo-new.svg" alt="Bloco Premiado" class="h-10 mr-3 drop-shadow-md" />
+              <h1 class="text-2xl font-bold text-white">BLOCO PREMIADO</h1>
             </NuxtLink>
           </div>
           <nav class="hidden md:block">
@@ -15,7 +15,7 @@
                 <NuxtLink 
                   :to="item.path" 
                   class="px-3 py-2" 
-                  :class="$route.path === item.path ? 'text-blue-600 font-semibold' : 'text-gray-600 hover:text-blue-500'"
+                  :class="$route.path === item.path ? 'text-yellow-300 font-semibold' : 'text-white hover:text-yellow-200'"
                 >
                   {{ item.name }}
                 </NuxtLink>
@@ -23,20 +23,20 @@
             </ul>
           </nav>
           <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path v-if="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
               <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </div>
         <!-- Mobile menu -->
-        <div v-if="mobileMenuOpen" class="md:hidden bg-white border-t border-gray-200 py-2">
+        <div v-if="mobileMenuOpen" class="md:hidden bg-gradient-to-br from-orange-700 to-pink-700 border-t border-orange-500 py-2 shadow-lg">
           <ul class="px-4 space-y-2">
             <li v-for="item in navItems" :key="item.path">
               <NuxtLink 
                 :to="item.path" 
                 class="block px-3 py-2 rounded-md"
-                :class="$route.path === item.path ? 'bg-blue-50 text-blue-600 font-semibold' : 'text-gray-600 hover:bg-gray-50'"
+                :class="$route.path === item.path ? 'bg-orange-600 bg-opacity-40 text-yellow-300 font-semibold' : 'text-white hover:bg-orange-600 hover:bg-opacity-30'"
                 @click="mobileMenuOpen = false"
               >
                 {{ item.name }}
@@ -50,16 +50,16 @@
         <slot />
       </main>
   
-      <footer class="bg-gray-800 text-white py-8 mt-12">
+      <footer class="bg-gradient-to-br from-gray-800 to-gray-900 text-white py-8 mt-12">
         <div class="max-w-7xl mx-auto px-4">
           <div class="flex flex-col md:flex-row justify-between items-center">
             <div class="flex items-center mb-6 md:mb-0">
-              <img src="/logo.png" alt="NostroLet" class="h-10 mr-3 bg-white p-1 rounded" />
-              <h2 class="text-xl font-bold">NOSTROLET</h2>
+              <img src="/bp-logo-new.svg" alt="Bloco Premiado" class="h-10 w-10 mr-3 rounded-lg shadow-md" />
+              <h2 class="text-xl font-bold">BLOCO PREMIADO</h2>
             </div>
             <div class="text-center md:text-right">
-              <p class="text-gray-400 text-sm">© 2025 NostroLet. Todos os direitos reservados.</p>
-              <p class="text-gray-400 text-sm mt-1">Tokenizando o futuro do mercado imobiliário.</p>
+              <p class="text-gray-400 text-sm">© 2025 Bloco Premiado. Todos os direitos reservados.</p>
+              <p class="text-gray-400 text-sm mt-1">Plataforma de staking com sorteios transparentes e escaláveis.</p>
             </div>
           </div>
         </div>
@@ -68,14 +68,15 @@
   </template>
   
   <script setup>
+  import { ref } from 'vue';
+  
   const mobileMenuOpen = ref(false);
   
   const navItems = [
     { name: 'Home', path: '/' },
-    { name: 'Rodada Fundadora', path: '/founder' },
-    { name: 'Pré-Seed', path: '/preseed' },
-    { name: 'Mercado', path: '/market' },
-    { name: 'Roadmap', path: '/roadmap' },
+    { name: 'Pré-Seed', path: '/preseed-new' },
+    { name: 'Arquitetura', path: '/architecture' },
+    { name: 'Sorteios', path: '/drawings' },
     { name: 'Investir', path: '/invest' }
   ];
   </script>

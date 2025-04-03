@@ -4,12 +4,12 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'NostroLet - Tokenização de Imóveis',
+      title: 'Bloco Premiado - Sorteios na Blockchain',
       meta: [
         { name: 'description', content: 'NostroLet é um DApp premium que revoluciona o mercado imobiliário através da tokenização de imóveis.' }
       ],
       link: [
-        { rel: 'icon', type: 'image/png', href: '/favicon.png' }
+        { rel: 'icon', type: 'image/ico', href: '/favicon.ico' }
       ]
     }
   },

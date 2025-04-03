@@ -2,10 +2,10 @@
 <template>
     <div class="min-h-screen flex items-center justify-center relative overflow-hidden">
       <!-- Background elements -->
-      <div class="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900"></div>
+      <div class="absolute inset-0 bg-gradient-to-br from-orange-500 via-red-500 to-pink-600"></div>
       <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
-      <div class="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-400 rounded-full filter blur-3xl opacity-20 transform translate-x-1/4 -translate-y-1/4"></div>
-      <div class="absolute bottom-0 left-0 w-1/2 h-1/2 bg-indigo-500 rounded-full filter blur-3xl opacity-10 transform -translate-x-1/4 translate-y-1/4"></div>
+      <div class="absolute top-0 right-0 w-1/3 h-1/3 bg-yellow-400 rounded-full filter blur-3xl opacity-20 transform translate-x-1/4 -translate-y-1/4"></div>
+      <div class="absolute bottom-0 left-0 w-1/2 h-1/2 bg-pink-500 rounded-full filter blur-3xl opacity-10 transform -translate-x-1/4 translate-y-1/4"></div>
       
       <!-- Login Form -->
       <div v-if="!authenticated" class="relative z-10 max-w-md w-full">
@@ -13,13 +13,13 @@
           <!-- Logo with animation -->
           <div class="flex justify-center mb-8 transform transition-all hover:scale-105 duration-300">
             <div class="p-3 bg-white rounded-2xl shadow-lg">
-              <img src="/logo.png" alt="NostroLet" class="h-20" />
+              <img src="/bp-logo-new.svg" alt="Bloco Premiado" class="h-20" />
             </div>
           </div>
           
           <h2 class="text-3xl font-bold text-center text-white mb-6">Acesso Restrito</h2>
-          <p class="text-blue-100 mb-8 text-center">
-            Digite a senha para acessar a apresentação da rodada de investimentos da NostroLet.
+          <p class="text-orange-100 mb-8 text-center">
+            Digite a senha para acessar a apresentação da rodada de investimentos do Bloco Premiado.
           </p>
           
           <div class="mb-6">
@@ -28,7 +28,7 @@
                 type="password" 
                 v-model="password" 
                 placeholder="Digite a senha" 
-                class="w-full px-5 py-4 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-xl text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition-all duration-300"
+                class="w-full px-5 py-4 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-xl text-white placeholder-orange-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition-all duration-300"
                 @keyup.enter="authenticate"
               />
               <div class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white opacity-70">
@@ -47,7 +47,7 @@
           
           <button 
             @click="authenticate"
-            class="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold py-4 px-6 rounded-xl hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            class="w-full bg-gradient-to-r from-orange-500 to-pink-600 text-white font-semibold py-4 px-6 rounded-xl hover:from-orange-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
           >
             <span class="flex items-center justify-center">
               <span>Acessar Apresentação</span>
@@ -57,8 +57,8 @@
             </span>
           </button>
           
-          <div class="mt-6 text-center text-blue-200 text-sm">
-            Entre em contato para solicitar acesso: <a href="mailto:contato@nostrolet.com" class="text-white hover:underline">034984176363</a>
+          <div class="mt-6 text-center text-orange-200 text-sm">
+            Entre em contato para solicitar acesso: <a href="tel:034984176363" class="text-white hover:underline">034984176363</a>
           </div>
         </div>
       </div>
@@ -82,7 +82,7 @@
   function authenticate() {
     if (password.value === '0747') {
       authenticated.value = true;
-      localStorage.setItem('nostrolet-auth', 'true');
+      localStorage.setItem('blocopremiado-auth', 'true');
     } else {
       error.value = 'Senha incorreta. Tente novamente.';
       // Clear password after error
@@ -96,7 +96,7 @@
   }
 
   onMounted(() => {
-    if (localStorage.getItem('nostrolet-auth') === 'true') {
+    if (localStorage.getItem('blocopremiado-auth') === 'true') {
       authenticated.value = true;
     }
   });
