@@ -28,8 +28,8 @@
             <span>Solução</span>
             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
           </a>
-          <a href="#Rodadas" class="relative hover:text-blue-200 transition-all group py-1">
-            <span>Investir</span>
+          <a href="#investir" class="relative hover:text-blue-200 transition-all group py-1">
+            <span>Rodadas</span>
             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
           </a>
         </div>
