@@ -1,12 +1,12 @@
 <!-- layouts/default.vue -->
 <template>
-    <div class="min-h-screen bg-gray-50">
+    <div class="min-h-screen" :class="isDashboardPage ? 'bg-gradient-to-br from-pink-900 to-red-900 text-white' : 'bg-gray-50'">
       <header class="bg-gradient-to-r from-orange-600 to-pink-600 shadow-md sticky top-0 z-10">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-4 py-3 sm:py-4 flex items-center justify-between">
           <div class="flex items-center">
-            <NuxtLink to="/" class="flex items-center">
-              <img src="/bp-logo-new.svg" alt="Bloco Premiado" class="h-10 mr-3 drop-shadow-md" />
-              <h1 class="text-2xl font-bold text-white">BLOCO PREMIADO</h1>
+            <NuxtLink to="/" class="flex items-center space-x-1 sm:space-x-2">
+              <img src="/bp-logo-new.svg" alt="Bloco Premiado" class="h-8 sm:h-10 drop-shadow-md" />
+              <h1 class="text-lg sm:text-xl md:text-2xl font-bold text-white hidden xs:inline-block">BLOCO PREMIADO</h1>
             </NuxtLink>
           </div>
           <nav class="hidden md:block">
@@ -46,18 +46,18 @@
         </div>
       </header>
   
-      <main class="max-w-7xl mx-auto px-4 py-8">
+      <main class="max-w-7xl mx-auto px-4 py-4 sm:py-8">
         <slot />
       </main>
   
       <footer class="bg-gradient-to-br from-gray-800 to-gray-900 text-white py-8 mt-12">
         <div class="max-w-7xl mx-auto px-4">
-          <div class="flex flex-col md:flex-row justify-between items-center">
-            <div class="flex items-center mb-6 md:mb-0">
+          <div class="flex flex-col sm:flex-row justify-between items-center">
+            <div class="flex items-center mb-4 sm:mb-0">
               <img src="/bp-logo-new.svg" alt="Bloco Premiado" class="h-10 w-10 mr-3 rounded-lg shadow-md" />
               <h2 class="text-xl font-bold">BLOCO PREMIADO</h2>
             </div>
-            <div class="text-center md:text-right">
+            <div class="text-center sm:text-right">
               <p class="text-gray-400 text-sm">© 2025 Bloco Premiado. Todos os direitos reservados.</p>
               <p class="text-gray-400 text-sm mt-1">Plataforma de staking com sorteios transparentes e escaláveis.</p>
             </div>
@@ -68,7 +68,11 @@
   </template>
   
   <script setup>
-  import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+const isDashboardPage = computed(() => route.path === '/dashboard');
   
   const mobileMenuOpen = ref(false);
   

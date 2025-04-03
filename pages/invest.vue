@@ -1,25 +1,25 @@
 <!-- pages/invest.vue -->
 <template>
   <div class="min-h-screen bg-gray-50">
-    <div class="container mx-auto px-4 py-12 max-w-5xl">
+    <div class="container mx-auto px-4 py-6 sm:py-12 max-w-5xl">
       <!-- Main investment section with premium styling -->
       <div class="relative overflow-hidden bg-gradient-to-r from-orange-600 to-pink-700 rounded-2xl shadow-xl">
         <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div class="absolute -left-32 -bottom-16 w-96 h-96 bg-yellow-500 rounded-full opacity-10 blur-3xl"></div>
         <div class="absolute -right-32 -top-16 w-96 h-96 bg-pink-500 rounded-full opacity-10 blur-3xl"></div>
         
-        <div class="relative md:flex">
-          <div class="md:w-2/3 p-8 md:p-12 z-10">
+        <div class="relative flex flex-col md:flex-row">
+          <div class="w-full md:w-2/3 p-6 sm:p-8 md:p-12 z-10">
             <div class="inline-block bg-gradient-to-r from-yellow-500 to-orange-500 px-3 py-1 rounded-full text-white text-sm font-semibold mb-4">
               Investimento Pre-Seed
             </div>
-            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 sm:mb-6 leading-tight">
               <span class="bg-clip-text text-transparent bg-gradient-to-r from-white to-yellow-200">Invista no Futuro dos Sorteios em Blockchain</span>
             </h1>
-            <p class="text-orange-100 text-lg md:text-xl mb-8 leading-relaxed">
+            <p class="text-orange-100 text-base sm:text-lg md:text-xl mb-4 sm:mb-8 leading-relaxed">
               Entre na primeira plataforma de staking com sorteios baseada em blockchain do Brasil, criando uma nova categoria de staking com recompensas e diversão contínuas.
             </p>
-            <div class="space-y-4 md:space-y-0 md:space-x-4 md:flex items-center">
+            <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 items-center">
               <div class="relative group">
                 <div class="absolute -inset-0.5 bg-gradient-to-r from-white to-yellow-300 rounded-lg blur opacity-70 group-hover:opacity-100 transition duration-300"></div>
                 <a 
@@ -43,9 +43,9 @@
             </div>
           </div>
           
-          <div class="md:w-1/3 bg-white relative overflow-hidden shadow-inner">
+          <div class="w-full md:w-1/3 bg-white relative overflow-hidden shadow-inner">
             <div class="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-orange-400 to-pink-500"></div>
-            <div class="p-10">
+            <div class="p-6 sm:p-8 md:p-10">
               <div class="text-center">
                 <div class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-orange-600 to-pink-600 mb-2">R$ 1,5M</div>
                 <div class="text-gray-700 font-medium">Valuation Atual</div>
@@ -68,11 +68,11 @@
       </div>
       
       <!-- Investment Opportunities Section -->
-      <div class="mt-12 bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
+      <div class="mt-8 sm:mt-12 bg-white rounded-xl shadow-lg p-4 sm:p-6 md:p-8 border border-gray-100 overflow-hidden">
         <div class="p-8">
-          <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-orange-500 pb-2 inline-block">Oportunidades de Investimento</h2>
+          <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 border-b-2 border-orange-500 pb-2 inline-block">Oportunidades de Investimento</h2>
           
-          <div class="grid md:grid-cols-2 gap-8 mt-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mt-4 sm:mt-8">
             <!-- Seed Round -->
             <div class="bg-gradient-to-br from-gray-50 to-orange-50 rounded-xl border border-orange-100 overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 relative">
               <div class="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-yellow-600 to-orange-500"></div>
@@ -169,7 +169,7 @@
         <div class="p-8">
           <h2 class="text-2xl font-bold text-gray-800 mb-6">Por Que Investir no Bloco Premiado?</h2>
           
-          <div class="grid md:grid-cols-3 gap-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
               <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -204,7 +204,7 @@
       </div>
       
       <!-- Call to Action -->
-      <div class="mt-12 text-center">
+      <div class="mt-8 sm:mt-12 text-center">
         <div class="relative inline-block group">
           <div class="absolute -inset-0.5 bg-gradient-to-r from-orange-600 to-pink-600 rounded-lg blur opacity-50 group-hover:opacity-80 transition duration-300"></div>
           <a 
@@ -221,7 +221,7 @@
       </div>
       
       <!-- Back to Dashboard Link -->
-      <div class="mt-16 text-center pb-10">
+      <div class="mt-8 sm:mt-16 text-center pb-6 sm:pb-10">
         <NuxtLink 
           to="/dashboard" 
           class="inline-flex items-center text-orange-600 font-semibold hover:text-pink-600 transition-all duration-300 group"

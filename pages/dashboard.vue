@@ -1,6 +1,6 @@
 <!-- dashboard.vue component -->
 <template>
-  <div class="overflow-hidden">
+  <div class="dashboard-content min-h-screen flex flex-col">
     <!-- Premium Navigation Bar -->
     <nav class="bg-gradient-to-r from-orange-600 to-pink-600 text-white py-4 sticky top-0 z-50 shadow-xl transition-all duration-300" :class="{'py-2': scrolled}">
       <div class="container mx-auto px-4 flex justify-between items-center">
@@ -11,12 +11,12 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
             </div>
-            <span class="ml-2 font-medium">Voltar</span>
+            <span class="ml-2 font-medium">Sair</span>
           </button>
         </div>
         
-        <div class="flex items-center space-x-8">
-          <a href="/dashboard" class="hover:text-orange-200 transition-all duration-300">Visão Geral</a>
+        <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+         
           <a href="#resumo" class="relative hover:text-orange-200 transition-all group py-1">
             <span>Resumo</span>
             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
@@ -54,7 +54,7 @@
       </div>
       
       <!-- Mobile Menu with Animation -->
-      <transition name="slide-down">
+      <transition name="slide-down" class="relative z-[90]">
         <div v-if="mobileMenuOpen" class="md:hidden bg-pink-700 bg-opacity-95 backdrop-blur-md mt-4 mx-4 p-6 rounded-xl shadow-2xl border border-white border-opacity-10">
           <div class="flex flex-col space-y-5">
             <a href="#resumo" class="text-white hover:text-orange-200 transition-all py-2 text-lg font-medium border-b border-pink-600 pb-2">
@@ -78,7 +78,7 @@
     </nav>
     
     <!-- Main Content with Animation -->
-    <div class="max-w-7xl mx-auto px-4 py-6 space-y-10">
+    <div class="w-full max-w-none px-0 sm:px-4 py-6 space-y-10">
       <!-- Hero Section with Animation and Parallax Effect -->
       <div class="relative bg-gradient-to-br from-orange-500 via-red-500 to-pink-600 rounded-2xl shadow-2xl overflow-hidden transform-gpu">
         <!-- Background decorative elements -->
@@ -91,13 +91,13 @@
         </div>
         
         <div class="md:flex relative z-10">
-          <div class="md:w-1/2 p-8 md:p-12">
+          <div class="w-full md:w-1/2 p-6 sm:p-8 md:p-12">
             <div v-motion-fade-visible :delay="200">
-              <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+              <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 sm:mb-6 leading-tight">
                 Rodada Pré-Seed<br />
                 <span class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-white">Bloco Premiado</span>
               </h1>
-              <p class="text-xl text-orange-100 mb-6 leading-relaxed">
+              <p class="text-lg text-orange-100 mb-10 max-w-3xl">
                 Plataforma de staking com sorteios baseada em blockchain, utilizando arquitetura Stateless Virtual Ticket (SVTA) para uma experiência totalmente transparente, escalável e sem custos de gas.
                 <span class="block mt-3 font-semibold">
                   Transparência + Escalabilidade + Interatividade
@@ -105,7 +105,7 @@
               </p>
             </div>
             
-            <div v-motion-slide-visible-once :delay="600" class="space-y-3 md:space-y-0 md:space-x-4 md:flex items-center">
+            <div v-motion-slide-visible-once :delay="600" class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 items-center">
               <a 
                 href="/preseed" 
                 class="block md:inline-flex px-6 py-3 bg-white text-pink-600 font-bold rounded-xl shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 mb-3 md:mb-0 text-center md:text-left"
@@ -121,7 +121,7 @@
                 Arquitetura SVTA
               </a>
               
-              <a href="#diferenciais" class="block md:inline-flex mt-4 md:mt-0 items-center justify-center text-white font-medium hover:text-orange-200 transition-all duration-300 py-3 px-6">
+              <a href="#diferenciais" class="flex items-center justify-center text-white font-medium hover:text-orange-200 transition-all duration-300 py-3 px-6 mt-2 sm:mt-0">
                 <span>Diferenciais</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -149,7 +149,7 @@
             </div>
           </div>
           
-          <div class="md:w-1/2 flex items-center justify-center p-8 md:p-12 relative overflow-hidden">
+          <div class="w-full md:w-1/2 flex items-center justify-center p-6 sm:p-8 md:p-12 relative overflow-hidden">
             <!-- Animated background for logo -->
             <div class="absolute inset-0 flex items-center justify-center">
               <div class="w-64 h-64 bg-white bg-opacity-10 rounded-full filter blur-md animate-pulse-slow"></div>
@@ -157,14 +157,14 @@
             
             <!-- Logo with Glow Effect -->
             <div class="relative z-10 flex items-center justify-center bg-pink-700 bg-opacity-50 backdrop-blur-sm p-8 rounded-full border border-white border-opacity-10 shadow-2xl">
-              <img src="/bp-logo-new.svg" alt="Bloco Premiado" class="max-h-64 md:max-h-80 drop-shadow-2xl" />
+              <img src="/bp-logo-new.svg" alt="Bloco Premiado" class="max-h-48 sm:max-h-64 md:max-h-80 drop-shadow-2xl" />
             </div>
           </div>
         </div>
         
         <!-- Investment Rounds Stats -->
         <div class="bg-orange-900 bg-opacity-50 backdrop-blur-md border-t border-white border-opacity-10 py-4 px-6">
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-10">
             <div class="text-center">
               <p class="text-xs uppercase tracking-wider text-orange-200 font-medium">Tamanho da Rodada</p>
               <p class="text-2xl font-bold text-white">R$ 225K</p>
@@ -186,7 +186,7 @@
       </div>
   
       <!-- Resumo Section with Premium Design -->
-      <div id="resumo" class="relative bg-gradient-to-br from-orange-500 via-red-500 to-pink-600 rounded-2xl shadow-2xl overflow-hidden transform-gpu p-8 md:p-10">
+      <div id="resumo" class="mt-8 sm:mt-12 md:mt-16 p-4 sm:p-6 md:p-8 bg-gradient-to-br from-pink-800 to-red-800 rounded-2xl shadow-lg p-6 sm:p-8 md:p-10 border border-pink-700">
         <!-- Background decorative elements -->
         <div class="absolute inset-0 overflow-hidden">
           <div class="absolute -right-20 -top-20 w-60 h-60 bg-yellow-400 opacity-10 rounded-full"></div>
@@ -201,7 +201,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
-            <h2 class="text-3xl font-bold text-white">Resumo</h2>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-8 border-l-4 border-orange-500 pl-4">Resumo</h2>
           </div>
           
           <p class="text-lg text-orange-100 mb-10 max-w-3xl">
@@ -232,7 +232,7 @@
         </div>
       </div>
       <!-- Arquitetura Section with Premium Design -->
-      <div id="arquitetura" class="relative bg-gradient-to-r from-orange-600 to-pink-600 rounded-2xl shadow-2xl overflow-hidden transform-gpu p-8 md:p-10 mt-10">
+      <div id="arquitetura" class="mt-8 sm:mt-12 md:mt-16 p-4 sm:p-6 md:p-8 bg-gradient-to-br from-pink-800 to-red-800 rounded-2xl shadow-lg p-6 sm:p-8 md:p-10 border border-pink-700">
         <!-- Background decorative elements -->
         <div class="absolute inset-0 overflow-hidden">
           <div class="absolute -right-20 bottom-0 w-80 h-80 bg-yellow-500 opacity-10 rounded-full blur-3xl"></div>
@@ -247,7 +247,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
               </svg>
             </div>
-            <h2 class="text-3xl font-bold text-white">Arquitetura SVTA</h2>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-8 border-l-4 border-orange-500 pl-4">Arquitetura SVTA</h2>
           </div>
           
           <p class="text-lg text-orange-100 mb-10 max-w-3xl">
@@ -262,7 +262,7 @@
                   <h3 class="text-xl font-bold text-white">IDs Determinísticos de Tickets</h3>
                   <p class="text-orange-200 text-sm mt-1">Gerados matematicamente com base em dados imutáveis do stake</p>
                 </div>
-                <div class="bg-gradient-to-r from-yellow-500 to-orange-600 py-3 px-6 rounded-lg shadow-lg">
+                <div class="bg-gradient-to-r from-yellow-500 to-orange-500 py-3 px-6 rounded-lg shadow-lg">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
                   </svg>
@@ -285,7 +285,7 @@
                   <h3 class="text-xl font-bold text-white">Computação Stateless</h3>
                   <p class="text-orange-200 text-sm mt-1">Zero armazenamento, zero custo</p>
                 </div>
-                <div class="bg-gradient-to-r from-yellow-500 to-orange-600 py-3 px-6 rounded-lg shadow-lg">
+                <div class="bg-gradient-to-r from-yellow-500 to-orange-500 py-3 px-6 rounded-lg shadow-lg">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                   </svg>
@@ -307,7 +307,7 @@
                   <h3 class="text-xl font-bold text-white">Totalmente Auditável</h3>
                   <p class="text-orange-200 text-sm mt-1">Transparência e segurança garantidas</p>
                 </div>
-                <div class="bg-gradient-to-r from-yellow-500 to-orange-600 py-3 px-6 rounded-lg shadow-lg">
+                <div class="bg-gradient-to-r from-yellow-500 to-orange-500 py-3 px-6 rounded-lg shadow-lg">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
@@ -338,7 +338,7 @@
       </div>
   
       <!-- Nossa Solução Section -->
-      <div id="diferenciais" class="relative bg-gradient-to-r from-orange-700 to-pink-700 rounded-2xl shadow-2xl overflow-hidden transform-gpu p-8 md:p-10 mt-10">
+      <div id="diferenciais" class="mt-8 sm:mt-12 md:mt-16 p-4 sm:p-6 md:p-8 bg-gradient-to-br from-pink-800 to-red-800 rounded-2xl shadow-lg p-6 sm:p-8 md:p-10 border border-pink-700">
         <!-- Background decorative elements -->
         <div class="absolute inset-0 overflow-hidden">
           <div class="absolute -left-20 bottom-0 w-80 h-80 bg-yellow-600 opacity-10 rounded-full blur-3xl"></div>
@@ -353,7 +353,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
-            <h2 class="text-3xl font-bold text-white">Nossa Solução</h2>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-8 border-l-4 border-orange-500 pl-4">Diferenciais</h2>
           </div>
           
           <div class="space-y-6">
@@ -368,7 +368,7 @@
                   </div>
                   <h3 class="text-xl font-bold text-white">Staking de Criptomoedas</h3>
                 </div>
-                <p class="text-orange-100">Deposite ou compre direto suas criptomoedas na plataforma Bloco Premiado e obtenha rendimentos competitivos, com APY de 8-12% anuais e segurança garantida.</p>
+                <p class="text-pink-100">Deposite ou compre direto suas criptomoedas na plataforma Bloco Premiado e obtenha rendimentos competitivos, com APY de 8-12% anuais e segurança garantida.</p>
               </div>
               
               <!-- Sorteios Card -->
@@ -381,7 +381,7 @@
                   </div>
                   <h3 class="text-xl font-bold text-white">Sorteios Regulares</h3>
                 </div>
-                <p class="text-orange-100">Além do rendimento do staking, você recebe tickets virtuais para participar de sorteios semanais, mensais e trimestrais com prêmios em cripto e prêmios materiais como Smartphone, carros, imovéis, etc..</p>
+                <p class="text-pink-100">Além do rendimento do staking, você recebe tickets virtuais para participar de sorteios semanais, mensais e trimestrais com prêmios em cripto e prêmios materiais como Smartphone, carros, imovéis, etc..</p>
               </div>
               
               <!-- Tickets Virtuais Card -->
@@ -394,7 +394,7 @@
                   </div>
                   <h3 class="text-xl font-bold text-white">Tickets Virtuais</h3>
                 </div>
-                <p class="text-orange-100">Para cada 1000 EQ9 em stake, você recebe 1 ticket virtual para os sorteios. Quanto maior seu stake e mais tempo ele permanecer na plataforma, mais tickets você acumula.</p>
+                <p class="text-pink-100">Para cada 1000 EQ9 em stake, você recebe 1 ticket virtual para os sorteios. Quanto maior seu stake e mais tempo ele permanecer na plataforma, mais tickets você acumula.</p>
               </div>
               
               <!-- Zero Gas Fees Card -->
@@ -407,13 +407,13 @@
                   </div>
                   <h3 class="text-xl font-bold text-white">Zero Gas Fees</h3>
                 </div>
-                <p class="text-orange-100">Nossa arquitetura SVTA elimina o custo de gas para criação e gerenciar tickets. Você não paga pelos tickets somente a taxa de stake para participar dos sorteios - apenas guarde e ganhe tickets automaticamente.</p>
+                <p class="text-pink-100">Nossa arquitetura SVTA elimina o custo de gas para criação e gerenciar tickets. Você não paga pelos tickets somente a taxa de stake para participar dos sorteios - apenas guarde e ganhe tickets automaticamente.</p>
               </div>
             </div>
             
             <!-- Vantagem Competitiva -->
             <div class="bg-white bg-opacity-10 backdrop-blur-md p-6 rounded-xl border border-white border-opacity-20 hover:bg-opacity-15 transition-all duration-300 mt-8">
-              <h3 class="text-xl font-bold text-white mb-4">Nossa Vantagem Competitiva</h3>
+              <h2 class="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-8 border-l-4 border-orange-500 pl-4">Nossa Vantagem Competitiva</h2>
               <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="bg-white bg-opacity-10 p-4 rounded-lg">
                   <div class="flex items-center mb-2">
@@ -553,7 +553,7 @@
             </div>
           </div>
           
-          <div class="flex flex-col md:flex-row gap-8 items-center justify-center">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 items-center justify-center">
             <NuxtLink 
               to="/preseed-new" 
               class="inline-flex items-center bg-white text-pink-600 font-semibold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-lg"
@@ -581,6 +581,9 @@
 </template>
 
 <script setup>
+// Import dashboard-specific styles
+import '@/assets/css/dashboard.css';
+
 import { ref, onMounted, onUnmounted } from 'vue';
 import { useRouter } from 'vue-router';
 
@@ -613,6 +616,11 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+/* Dashboard content styles */
+.dashboard-content {
+  position: relative;
+  z-index: 1;
+}
 .bg-grid-pattern {
   background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
@@ -652,4 +660,6 @@ onUnmounted(() => {
   opacity: 0;
   transform: translateY(-20px);
 }
+
+
 </style>

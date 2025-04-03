@@ -1,18 +1,18 @@
 <!-- pages/drawings.vue -->
 <template>
   <div class="min-h-screen bg-gray-50">
-    <div class="container mx-auto px-4 py-12 max-w-6xl">
+    <div class="container mx-auto px-4 py-6 sm:py-12 max-w-6xl">
       <!-- Hero section -->
-      <div class="relative overflow-hidden bg-gradient-to-r from-orange-600 to-pink-700 rounded-2xl shadow-xl mb-12">
+      <div class="relative overflow-hidden bg-gradient-to-r from-orange-600 to-pink-700 rounded-2xl shadow-xl mb-6 sm:mb-12">
         <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div class="absolute -left-32 -bottom-16 w-96 h-96 bg-yellow-500 rounded-full opacity-10 blur-3xl"></div>
         <div class="absolute -right-32 -top-16 w-96 h-96 bg-pink-500 rounded-full opacity-10 blur-3xl"></div>
         
-        <div class="relative p-8 md:p-12 z-10">
-          <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+        <div class="relative p-6 sm:p-8 md:p-12 z-10">
+          <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 leading-tight">
             <span class="bg-clip-text text-transparent bg-gradient-to-r from-white to-yellow-200">Sorteios Transparentes em Blockchain</span>
           </h1>
-          <p class="text-orange-100 text-lg md:text-xl max-w-3xl mb-6 leading-relaxed">
+          <p class="text-orange-100 text-base sm:text-lg md:text-xl max-w-3xl mb-4 sm:mb-6 leading-relaxed">
             Staking com recompensas emocionantes através de um sistema proprietário de sorteios que combina segurança, transparência e zero custo de gas.
           </p>
           <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
@@ -37,8 +37,8 @@
       </div>
       
       <!-- Current Drawing Alert -->
-      <div class="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl shadow-lg overflow-hidden mb-12 transform transition hover:scale-[1.01] hover:shadow-xl">
-        <div class="p-6 text-white relative overflow-hidden">
+      <div class="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl shadow-lg overflow-hidden mb-6 sm:mb-12 transform transition hover:scale-[1.01] hover:shadow-xl">
+        <div class="p-4 sm:p-6 text-white relative overflow-hidden">
           <div class="absolute top-0 right-0 -mt-4 -mr-4 w-32 h-32 bg-white opacity-10 rounded-full"></div>
           <div class="flex flex-col md:flex-row items-start md:items-center justify-between">
             <div class="mb-4 md:mb-0">
@@ -46,7 +46,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <h2 class="text-2xl font-bold">Sorteio em Andamento!</h2>
+                <h2 class="text-xl sm:text-2xl font-bold">Sorteio em Andamento!</h2>
               </div>
               <p class="text-white text-opacity-90 mt-2 max-w-2xl">Estamos sorteando um <span class="font-bold">iPhone 16</span> em 12 de Abril de 2025! Faça staking de tokens EQ9 na nossa plataforma e participe automaticamente com seus tickets virtuais.</p>
             </div>
@@ -64,11 +64,11 @@
       </div>
 
       <!-- Main content -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-12">
         <!-- Phase 1: Current Drawing -->
         <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border-2 border-yellow-400">
           <div class="h-2 bg-gradient-to-r from-yellow-400 to-orange-500"></div>
-          <div class="p-6">
+          <div class="p-4 sm:p-6">
             <div class="flex items-center justify-center w-16 h-16 bg-orange-100 text-orange-500 rounded-full mb-4 mx-auto">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -111,7 +111,7 @@
         <!-- Monthly draws -->
         <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
           <div class="h-2 bg-gradient-to-r from-orange-500 to-pink-500"></div>
-          <div class="p-6">
+          <div class="p-4 sm:p-6">
             <div class="flex items-center justify-center w-16 h-16 bg-pink-100 text-pink-500 rounded-full mb-4 mx-auto">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -155,7 +155,7 @@
          
         <div class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
           <div class="h-2 bg-gradient-to-r from-pink-500 to-purple-500"></div>
-          <div class="p-6">
+          <div class="p-4 sm:p-6">
             <div class="flex items-center justify-center w-16 h-16 bg-purple-100 text-purple-500 rounded-full mb-4 mx-auto">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -312,7 +312,7 @@
       <!-- FAQ Section -->
       <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-12">
         <div class="p-8">
-          <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-orange-500 pb-2 inline-block">Perguntas Frequentes</h2>
+          <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6 border-b-2 border-orange-500 pb-2 inline-block">Perguntas Frequentes</h2>
           
           <div class="mt-6 space-y-6">
             <div class="border-b border-gray-200 pb-4">
@@ -345,7 +345,7 @@
 
       <!-- CTA Section -->
       <div class="text-center">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
           <div>
             <div class="relative inline-block group">
               <div class="absolute -inset-0.5 bg-gradient-to-r from-orange-600 to-pink-600 rounded-lg blur opacity-50 group-hover:opacity-80 transition duration-300"></div>
